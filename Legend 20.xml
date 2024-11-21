@@ -1,0 +1,37 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="trade_definition" id="trade" x="20" y="20">
+    <field name="SYMBOL">R_100</field>
+    <field name="TRADETYPE">CALLPUT</field>
+    <field name="CANDLE_INTERVAL">1</field>
+    <field name="CONTRACT_TYPE">CALL</field>
+    <field name="STAKE">0.35</field>
+  </block>
+  <block type="trade_definition_restart" id="restart">
+    <field name="RESTART">5</field>
+  </block>
+  <block type="indicators_ma" id="ma">
+    <field name="SYMBOL">R_100</field>
+    <field name="INTERVAL">1</field>
+    <field name="PERIOD">9</field>
+    <field name="TYPE">EMA</field>
+  </block>
+  <block type="indicators_ma" id="ma_slow">
+    <field name="SYMBOL">R_100</field>
+    <field name="INTERVAL">1</field>
+    <field name="PERIOD">21</field>
+    <field name="TYPE">EMA</field>
+  </block>
+  <block type="logic_compare" id="logic">
+    <field name="OPERATOR">GT</field>
+  </block>
+  <block type="logic_operation" id="logic_and">
+    <field name="OPERATOR">AND</field>
+  </block>
+  <block type="math_number" id="number">
+    <field name="NUM">0.35</field>
+  </block>
+  <block type="trade_definition_stop_loss" id="stop_loss">
+    <field name="STOP_LOSS">5</field>
+    <field name="TAKE_PROFIT">10</field>
+  </block>
+</xml>
